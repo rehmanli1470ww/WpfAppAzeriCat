@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfAppAzeriCat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAzeriCat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    <Grid Name="gr"  Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="LightYellow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="RR" FontSize="30" Background="Crimson" Margin="15"></Button>
+            <Button Grid.Column="1" Content="Rehmanli Rubail" FontSize="20" HorizontalContentAlignment="Left" BorderThickness="0"  Background="LightYellow"></Button>
+        </Grid>
+        <Grid Grid.Row="2"  Background="LightYellow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Button1" Content="Send" Grid.Column="1" Margin="15" Background="PeachPuff"></Button>
+            <TextBox Margin="15"></TextBox>
+        </Grid>
+       
+        <ListView x:Name="LView" Grid.Row="1" Margin="30,0,30,0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ItemsSource="{Binding yazismaq}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0,70,0" Foreground="Black" Grid.Column="0" Content="{Binding Text}" HorizontalContentAlignment="Left"/>
+                        <Label Margin="100,0,100,0"  Foreground="Black"  Grid.Column="1" Content="{Binding Date}" HorizontalContentAlignment="Right"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>
